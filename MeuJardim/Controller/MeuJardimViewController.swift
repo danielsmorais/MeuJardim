@@ -11,12 +11,7 @@ import UIKit
 class MeuJardimViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableViewJardim: UITableView!
-    
-    struct Planta {
-        let name: String
-        let imageName: String
-        let time: Date
-    }
+
     
     var jardim: [Planta] = []
     
@@ -50,7 +45,7 @@ class MeuJardimViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 100
     }
     
     

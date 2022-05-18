@@ -13,8 +13,10 @@ class CollectionViewCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
+        imageView.backgroundColor = UIColor(red: 60.0/255.0, green: 60.0/255.0, blue: 67.0/255.0, alpha: 0.25)
+        imageView.roundCorners(cornerRadius: 10.0)
         return imageView
     }()
     
@@ -28,10 +30,7 @@ class CollectionViewCell: UICollectionViewCell {
             images.append(UIImage(named: "\(p)")!)
         }
         
-        images.compactMap({ $0 })
-        
         imageView.image = images.randomElement()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -45,6 +44,6 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = nil
+        // imageView.image = nil
     }
 }
